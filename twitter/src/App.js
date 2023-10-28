@@ -1,5 +1,5 @@
 import React,{useState, useEffect, createContext} from "react";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter , Routes, Route} from 'react-router-dom';
 import Home from './component/Home/Home.js';
 import Profile from './component/Profile/Profile.js';
 import Post from './component/Profile/Profile.js';
