@@ -1,5 +1,5 @@
 import React from 'react';
-import './component/footer/Footer.js';
+import '/Users/aruzhan/Documents/Twitter/twitter/src/component/footer/Footer.css'
 
 const footer = () =>{
     return(

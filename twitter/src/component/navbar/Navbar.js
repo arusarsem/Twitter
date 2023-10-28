@@ -1,30 +1,21 @@
 import React from "react";
-import './component/navbar/Navbar.css';
+import { Link } from "react-router-dom";
 
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+const Navbar = () => {
+  return (
+    <div>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/post">Post</Link>
+      </li>
+      <li>
+        <Link to="/profile">Profile</Link>
+      </li>
 
- export const Navbar=()=>{
-    
-    return(
+    </div>
+  );
+};
 
-        
-           
-              <nav className="nav">
-                <Link to="/" className="site-title">
-                 Twitter
-                </Link>
-                <ul>
-                    <Link to="/">Home</Link>
-                  <Link to="/consultation">Post</=Link>
-                  <Link to="/profile">Profile</Link>
-                </ul>
-              </nav>
-    );
-    }
-          
-
-
-    
-
-
-export default Navbar
+export default Navbar;
