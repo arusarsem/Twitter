@@ -1,54 +1,30 @@
-import React,{useContext} from "react";
-import './navbar/Navbar.css';
-import { Link,useNavigate } from 'react-router-dom';
-import { UserContext } from "../../../App";
-import {ReactComponent as Cart} from '../../../assets/cart.svg';
+import React from "react";
+import './component/navbar/Navbar.css';
 
-const Navbar=({ darkTheme, darkText})=>{
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-    const user=useContext(UserContext);
-    const auth=getAuth(app);
-    const navigate=useNavigate();
+ export const Navbar=()=>{
+    
+    return(
 
-    const handleLogout=()=>{
-        signOut(auth).then(()=>{
-            navigate('/');
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+        
+           
+              <nav className="nav">
+                <Link to="/" className="site-title">
+                 Twitter
+                </Link>
+                <ul>
+                    <Link to="/">Home</Link>
+                  <Link to="/consultation">Post</=Link>
+                  <Link to="/profile">Profile</Link>
+                </ul>
+              </nav>
+    );
     }
-    const showLoginAndSignUp=(
-        <nav className="nav-links-container">
-                    <Link to="/" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Home</Link>
-                    <Link to="/books" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Mentors</Link>
-                    <Link to="/login" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Log In</Link>
-                    <Link to="/signup" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Sign up</Link>
-     
-                    
-                </nav>
-    )
-    const showLogoutAndCart=(
-        <nav className="nav-links-container">
-                    <Link to="/" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Home</Link>
-                    <Link to="/books" className={`${darkText ?'nav-links-dark':'nav-links'}`}>Books</Link>
-                    <a onClick={handleLogout} className={`${darkText ?'nav-links-dark':'nav-links'}`}>Log Out</a>
-                    <Link to="/cart" className="cartLink"><Cart/></Link>
-                    
-                </nav>
-    )
+          
+
+
     
 
-    return(
-        <section className={darkTheme? 'background-dark relative' + ' navbar-container' : 'background-transparent' + ' navbar-container'}>
-            <div className="container flex justify-between align-center">
-                <Link to="/" className="logo">IZ<span className="text-primary">DE</span></Link>
-
-                {/* {user? showLogoutAndCart: showLoginAndSignUp} */}
-                
-            </div>
-        </section>
-    )
-}
 
 export default Navbar
